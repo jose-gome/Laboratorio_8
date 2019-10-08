@@ -11,28 +11,25 @@ import edu.eci.cvds.samples.entities.TipoItem;
 
 public class MyBATISTipoItemDAO implements TipoItemDAO {
 	@Inject
-	  private TipoItemMapper tipoItemMapper;    
+	private TipoItemMapper tipoItemMapper;
 
-	  @Override
-	  public void save(TipoItem it) throws PersistenceException{
-	  try{
-		  tipoItemMapper.insertarTipoItem(it);
-	  }
-	  catch(org.apache.ibatis.exceptions.PersistenceException e){
-	      throw new PersistenceException("Error al registrar el item "+it.toString(),e);
-	  }        
+	@Override
+	public void save(TipoItem it) throws PersistenceException {
+		try {
+			tipoItemMapper.insertarTipoItem(it);
+		} catch (org.apache.ibatis.exceptions.PersistenceException e) {
+			throw new PersistenceException("Error al registrar el item " + it.toString(), e);
+		}
 
-	  }
+	}
 
-	  @Override
-	  public TipoItem load(int id) throws PersistenceException {
-	  try{
-	      return tipoItemMapper.getTipoItem(id);
-	  }
-	  catch(org.apache.ibatis.exceptions.PersistenceException e){
-	      throw new PersistenceException("Error al consultar el item "+id,e);
-	  }
+	@Override
+	public TipoItem load(int id) throws PersistenceException {
+		try {
+			return tipoItemMapper.getTipoItem(id);
+		} catch (org.apache.ibatis.exceptions.PersistenceException e) {
+			throw new PersistenceException("Error al consultar el item " + id, e);
+		}
 
-
-	  }
+	}
 }

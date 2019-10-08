@@ -87,10 +87,9 @@ public class MyBatisExample {
         System.out.println(prueba.consultarItem(56985));
         System.out.println(cm.consultarClientes());
         Cliente c = new Cliente("Jose", 10254862, "1852832", "No sea sapo", "goku@gmail.com");
-        cm.insertarCliente(c);
+        //cm.insertarCliente(c);   
         
-        
-        System.out.println(cm.consultarClientes());
+        System.out.println(cm.consultarCliente(10254862));
         
 
         

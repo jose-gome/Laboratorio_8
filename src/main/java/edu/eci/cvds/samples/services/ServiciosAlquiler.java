@@ -22,7 +22,7 @@ public interface ServiciosAlquiler {
    */
    public abstract List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler;
 
-   public abstract List<Cliente> consultarClientes() throws ExcepcionServiciosAlquiler;
+   public abstract List<Cliente> consultarClientes() throws ExcepcionServiciosAlquiler, ExcepcionServiciosAlquiler;
 
    public abstract Item consultarItem(int id) throws ExcepcionServiciosAlquiler;
 
