@@ -14,4 +14,6 @@ public interface ClienteDAO {
 	public Cliente load(long id) throws PersistenceException;
 	
 	public List<Cliente> consultarClientes() throws PersistenceException;
+	
+	public Cliente consultarCliente(long id) throws PersistenceException;
 }

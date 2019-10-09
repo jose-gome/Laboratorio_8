@@ -32,9 +32,14 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
+import edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper;
 import edu.eci.cvds.samples.entities.Cliente;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.TipoItem;
+import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
+import edu.eci.cvds.samples.services.ServiciosAlquiler;
+import edu.eci.cvds.samples.services.ServiciosAlquilerFactory;
+import edu.eci.cvds.samples.services.impl.ServiciosAlquilerImpl;
 
 /**
  *
@@ -77,19 +82,25 @@ public class MyBatisExample {
         //ClienteMapper cm=sqlss.getMapper(ClienteMapper.class)
         //cm...
         ClienteMapper cm=sqlss.getMapper(ClienteMapper.class);
-        System.out.println(cm.consultarCliente(4));
-        cm.agregarItemRentadoACliente(4, 1, parseDate("2019-03-12"), parseDate("2019-04-12"));
+        //System.out.println(cm.consultarCliente(4));
+        //cm.agregarItemRentadoACliente(4, 1, parseDate("2019-03-12"), parseDate("2019-04-12"));
         ItemMapper prueba= sqlss.getMapper(ItemMapper.class);
         TipoItem newTipoItem= new TipoItem(1,"Videojuego");
         //Item newInsertion= new Item(newTipoItem, 56985, "Prueba", "No se que poner", parseDate("2000-07-29"), 1514854, "hola", "hgfhf");
         //prueba.insertarItem(newInsertion);
-        System.out.println(prueba.consultarItems());
-        System.out.println(prueba.consultarItem(56985));
-        System.out.println(cm.consultarClientes());
-        Cliente c = new Cliente("Jose", 10254862, "1852832", "No sea sapo", "goku@gmail.com");
+        //System.out.println(prueba.consultarItems());
+        //System.out.println(prueba.consultarItem(56985));
+        //System.out.println(cm.consultarClientes());
+        //Cliente c = new Cliente("Jose", 10254862, "1852832", "No sea sapo", "goku@gmail.com");
         //cm.insertarCliente(c);   
+        ServiciosAlquiler servicios = ServiciosAlquilerFactory.getInstance().getServiciosAlquilerTesting();
+        //System.out.println(cm.consultarCliente(0));
         
-        System.out.println(cm.consultarCliente(10254862));
+        TipoItemMapper itemmapper = sqlss.getMapper(TipoItemMapper.class);
+        System.out.println(itemmapper.consultarTiposItem());
+        	
+        	
+        
         
 
         

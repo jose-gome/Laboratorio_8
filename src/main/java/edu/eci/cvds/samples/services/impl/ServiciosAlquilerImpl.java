@@ -80,6 +80,24 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 		}
 	}
 
+	// falta
+	@Override
+	public List<Item> consultarItemsDisponibles() {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	@Override
+	public List<TipoItem> consultarTiposItem() throws ExcepcionServiciosAlquiler {
+
+		try {
+			return tipoItemDAO.consultarTiposItem();
+		} catch (PersistenceException e) {
+			throw new ExcepcionServiciosAlquiler("Error al consultar los tipos items", e);
+		}
+
+	}
+	// fin
+
 	@Override
 	public int valorMultaRetrasoxDia(int itemId) {
 		throw new UnsupportedOperationException("Not supported yet.");
@@ -91,17 +109,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 	}
 
 	@Override
-	public List<Item> consultarItemsDisponibles() {
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	@Override
 	public long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler {
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	@Override
-	public List<TipoItem> consultarTiposItem() throws ExcepcionServiciosAlquiler {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 

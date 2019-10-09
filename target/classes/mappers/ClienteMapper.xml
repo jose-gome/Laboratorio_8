@@ -76,14 +76,6 @@
 		insert into VI_CLIENTES (documento, nombre, telefono, direccion, email, vetado) 
 		values(#{cliente.documento}, #{cliente.nombre}, #{cliente.telefono}, #{cliente.direccion}, #{cliente.email}, #{cliente.vetado})
 	</insert>
-    
-	<resultMap type='ItemRentado' id='ItemRentadoResult'>
-		<id property='id' column='id'/>
-		<result property='fechainiciorenta' column='fechainiciorenta'/>
-		<result property='fechafinrenta' column='fechafinrenta'/>
-		<association property='item' javaType='Item'  resultMap='edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper.ItemResult' columnPrefix='item_'></association>
-	</resultMap>
-
 
 	<resultMap type='Cliente' id='ClienteResult'>  
 		<id property='documento' column='documento'/>
@@ -92,7 +84,7 @@
 		<result property='direccion' column='direccion'/>
 		<result property='email' column='email'/>
 		<result property='vetado' column='vetado'/>
-		<collection property='rentados' javaType='ArrayList' ofType='ItemRentado' resultMap='ItemRentadoResult'>
+		<collection property='rentados' javaType='ArrayList' ofType='ItemRentado' resultMap='edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper.ItemRentadoResult'>
 		</collection>
 	</resultMap>
           	
