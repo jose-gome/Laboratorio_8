@@ -52,6 +52,15 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 			throw new ExcepcionServiciosAlquiler("Error al consultar clientes", e);
 		}
 	}
+	
+	@Override
+	public void registrarItem(Item i) throws ExcepcionServiciosAlquiler {
+		try {
+			itemDAO.save(i);
+		} catch (PersistenceException e) {
+			throw new ExcepcionServiciosAlquiler("Error al registrar el item " + i.getId(), e);
+		}
+	}
 
 	@Override
 	public Item consultarItem(int id) throws ExcepcionServiciosAlquiler {
@@ -62,14 +71,6 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 		}
 	}
 
-	@Override
-	public void registrarItem(Item i) throws ExcepcionServiciosAlquiler {
-		try {
-			itemDAO.save(i);
-		} catch (PersistenceException e) {
-			throw new ExcepcionServiciosAlquiler("Error al registrar el item " + i.getId(), e);
-		}
-	}
 
 	@Override
 	public TipoItem consultarTipoItem(int id) throws ExcepcionServiciosAlquiler {
@@ -83,6 +84,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 	// falta
 	@Override
 	public List<Item> consultarItemsDisponibles() {
+		
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
