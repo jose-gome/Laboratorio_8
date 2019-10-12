@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!--
+        To change this license header, choose License Headers in Project Properties.
+        To change this template file, choose Tools | Templates
+        and open the template in the editor.
+        -->
+        <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head> 
+		BIENVENIDO 
+	<title> Servicio de Alquiler </title>
+	
+</h:head>
+
+<h:body>
+    <h:form id="Client_Form">
+    	<p:dataTable var="cliente" value="#{AlquilerItemsBean.consultarClientes()}"
+                     paginator="true"
+                     rows="12" selectionMode="single" id="documento" selection="#{AlquilerItemsBean.selectedCliente}" rowKey="#{cliente.getDocumento()}">
+            <f:facet name="header">
+                Clientes
+            </f:facet>
+            <p:column headerText="Documento">
+                <h:outputText value="#{cliente.getDocumento()}" />
+            </p:column>
+            <p:column headerText="Nombre" >
+                <h:outputText value="#{cliente.getNombre()}" />
+            </p:column>
+            <p:column headerText="Telefono">
+                <h:outputText value="#{cliente.getTelefono()}" />
+            </p:column>
+            <p:column headerText="Direccion">
+                <h:outputText value="#{cliente.getDireccion()}" />
+            </p:column>
+            <p:column headerText="Email">
+                <h:outputText value="#{cliente.getEmail()}" />
+            </p:column>
+            <p:column headerText="Vetado">
+                <h:outputText value="#{cliente.isVetado()}" />
+            </p:column>
+			
+			<f:facet name="footer">
+				<h:commandButton id="clisele"  value="Consultar Items Rentados" action="registroalquiler?faces-redirect = true"/>
+			</f:facet>
+        </p:dataTable>
+    </h:form>
+
+    <br></br>
+    <br></br>
+    
+    
+	    <p:outputLabel value = "Nombre: " />
+	    <p:inputText id="nombre" binding="#{nombre}"> </p:inputText>
+	    <br></br>
+	    <p:outputLabel value = "Documento:      " />
+	    <p:inputText id="documento" binding="#{documento}"> </p:inputText>
+	    <br></br>
+	    <p:outputLabel value = "Telefono:       " />
+	    <p:inputText id="telefono" binding="#{telefono}"> </p:inputText>
+	    <br></br>
+	    <p:outputLabel value = "Direccion:       " />
+	    <p:inputText id="direccion" binding="#{direccion}"> </p:inputText>
+	    <br></br>
+	    <p:outputLabel value = "Email:       " />
+	    <p:inputText id="email" binding="#{email}"> </p:inputText>
+	    <br></br>
+	    <p:commandButton 
+         update="Client_Form" actionListener="#{AlquilerItemsBean.insertarCliente(documento.value, nombre.value, telefono.value,direccion.value, email.value)}" value="Registrar Cliente" >
+        </p:commandButton>
+
+</h:body>
+
+
+</html>

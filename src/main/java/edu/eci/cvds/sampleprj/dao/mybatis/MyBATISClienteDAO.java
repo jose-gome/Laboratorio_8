@@ -12,6 +12,7 @@ import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.entities.TipoItem;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 public class MyBATISClienteDAO implements ClienteDAO {
@@ -20,11 +21,11 @@ public class MyBATISClienteDAO implements ClienteDAO {
 	private ClienteMapper clienteMapper;
 
 	@Override
-	public void save(Cliente it) throws PersistenceException {
+	public void insertarCliente(Cliente it) throws PersistenceException {
 		try {
 			clienteMapper.insertarCliente(it);
 		} catch (org.apache.ibatis.exceptions.PersistenceException e) {
-			throw new PersistenceException("Error al registrar el item " + it.toString(), e);
+			throw new PersistenceException("Error al registrar el cliente " + it.toString(), e);
 		}
 
 	}
@@ -34,7 +35,7 @@ public class MyBATISClienteDAO implements ClienteDAO {
 		try {
 			return clienteMapper.consultarCliente(id);
 		} catch (org.apache.ibatis.exceptions.PersistenceException e) {
-			throw new PersistenceException("Error al consultar el item " + id, e);
+			throw new PersistenceException("Error al consultar el cliente " + id, e);
 		}
 
 	}
@@ -56,6 +57,15 @@ public class MyBATISClienteDAO implements ClienteDAO {
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al consultar el cliente "+id,e);
+        }
+    }
+
+    @Override
+    public void agregarItemRentadoACliente(long id, int idit, Date fechainicio, Date fechafin) throws PersistenceException {
+        try {
+            clienteMapper.agregarItemRentadoACliente(id, idit, fechainicio, fechafin);
+        } catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("Error al agregar el item rentado ", e);
         }
     }
 

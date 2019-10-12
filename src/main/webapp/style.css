@@ -1,0 +1,17 @@
+h1 {
+  text-align: center;
+  color: cyan;
+   font-size: 40px;
+}
+body {
+	background-color: white;	
+}
+h2 {
+	color:black;
+}
+
+p {
+	margin: 100px auto;
+	width: 45%;
+	text-align: center;
+}

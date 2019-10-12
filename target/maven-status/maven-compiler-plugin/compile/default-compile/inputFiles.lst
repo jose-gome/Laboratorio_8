@@ -6,6 +6,8 @@ C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\samples\serv
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\mappers\ClienteMapper.java
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\samples\services\ServiciosAlquiler.java
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\sampleprj\jdbc\example\JDBCExample.java
+C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\view\BasePageBean.java
+C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\guice\GuiceContextListener.java
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\MyBATISClienteDAO.java
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\samples\services\impl\ServiciosAlquilerImpl.java
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\sampleprj\dao\ItemDAO.java
@@ -18,4 +20,5 @@ C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\sampleprj\da
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\samples\entities\Cliente.java
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\MyBATISItemDAO.java
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\sampleprj\dao\mybatis\mappers\TipoItemMapper.java
+C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\view\AlquilerItemsBean.java
 C:\Users\2153014\Downloads\Laboratorio_8\src\main\java\edu\eci\cvds\sampleprj\dao\PersistenceException.java

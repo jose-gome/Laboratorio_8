@@ -104,10 +104,10 @@ public class ServiciosAlquilerTest {
     	try {
 			serviciosAlquiler.consultarItem(1);
 		} catch (ExcepcionServiciosAlquiler e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.assertTrue(false);
 		}
     }
+    
     
     @Test 
     public void deberiaConsultarTipoItem() {
@@ -116,7 +116,7 @@ public class ServiciosAlquilerTest {
 			serviciosAlquiler.consultarTipoItem(1);
 		} catch (ExcepcionServiciosAlquiler e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.assertTrue(true);
 		}
     }
     

@@ -28,13 +28,10 @@
 			i.tarifaxdia ,
 			i.formatorenta ,
 			i.genero,
-			
 			ti.id as item_tipo_id,
 			ti.descripcion as item_tipo_descripcion 
-
-			
+            
 			FROM VI_ITEMS AS i, VI_TIPOITEM AS ti
-			WHERE i.TIPOITEM_id = ti.id
 	</select>
 	<select parameterType="map" id="consultarItem" resultMap="ItemResult">
 			select
@@ -53,4 +50,14 @@
 			where
 			i.TIPOITEM_id = ti.id and i.id=#{id}
 	</select>
+        
+        <select parameterType="map" id="consultarDisponibles" resultMap="ItemResult">
+            SELECT i.nombre
+            FROM VI_ITEMRENTADO AS ir, VI_CLIENTES as cl, VI_ITEMS as i 
+            WHERE ir.CLIENTES_documento=cl.documento and i.id=ir.ITEMS_id and cl.documento=#{documento};
+	</select>
+        
+        
+        
+        
 </mapper>
